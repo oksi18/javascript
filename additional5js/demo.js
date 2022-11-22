@@ -111,6 +111,19 @@
 // }
 // console.log(indexSwap([9,8,0,4], 0))
 
+// const arr = [9,8,0,4]
+// function foo(array, num) {
+//   for (let i = 0; i < array.length ; i++) {
+//     if (array[i + 1]) {
+//       let temp = array[num];
+//       array[num] = array[num + 1];
+//       array[num + 1] = temp;
+//     }
+//   }
+//   return array
+// }
+// console.log(foo(arr, 3));
+
 // - Сворити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень;
 // Двожина масиву від 2 до 100
 // EXAMPLE:
