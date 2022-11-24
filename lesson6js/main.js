@@ -161,9 +161,11 @@
 // ];
 // console.log(deck.filter(value => value.cardSuit === 'Spade' && value.value === 'Ace'));
 // console.log(deck.filter(value => value.value === 6));
-// console.log(deck.filter(value => value.color === 'red'));
+// console.log(deck.filter(value => value.color === 'Red'));
 // console.log(deck.filter(value => value.cardSuit === 'Diamonds'));
-// console.log(deck.filter(value => value.value > '9'));
+// let filter = deck.filter(value =>(value.cardSuit === 'Clubs' && value.value >= 9 ) ||
+//   (value.cardSuit === 'Clubs' && typeof value.value === 'string'));
+// console.log(filter);
 
 
 // Додатково по reduce
@@ -174,3 +176,22 @@
 //   hearts:[],
 //   clubs:[]
 // }
+// let reduce = deck.reduce((accum, value) => {
+//   if (value.cardSuit === 'Spade') {
+//     accum.spades.push(value);
+//   } else if (value.cardSuit === 'Clubs') {
+//     accum.clubs.push(value)
+//   } else if (value.cardSuit === 'Diamonds') {
+//     accum.diamonds.push(value)
+//   } else if (value.cardSuit === 'Hearts') {
+//     accum.hearts.push(value)
+//   }
+//   return accum;
+// }, {
+//   spades: [],
+//   diamonds: [],
+//   hearts: [],
+//   clubs: []
+// });
+// console.log(reduce);
+
