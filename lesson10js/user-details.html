@@ -17,6 +17,21 @@
   fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
     .then(value => value.json())
     .then(value => {
+      for (const item in value) {
+        let div = document.createElement('div')
+
+        if (typeof value[user] !== 'object') {
+          div.innerText = `${user} ${value[user]} `
+        }else {
+          div.innerText = `${user} `
+
+        }
+
+        document.body.appendChild(div)
+
+      }
+
+
 
 
 
