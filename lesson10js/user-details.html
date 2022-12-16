@@ -21,9 +21,28 @@
         let div = document.createElement('div')
 
         if (typeof value[user] !== 'object') {
-          div.innerText = `${user} ${value[user]} `
+          div.innerText = `${item} ${value[item]} `
         }else {
-          div.innerText = `${user} `
+          div.innerText = `${item} : `
+
+          for (const key in value[item]) {
+            let div1 = document.createElement('div')
+            if (typeof value[item][key] !== 'object' ) {
+              div1.innerText = `${key} - ${value[item][key]}`
+            }else {
+              div1.innerText = `${key} : `
+              for (const element in value[item][key]) {
+                let div2 = document.createElement('div')
+                if (typeof value[item][key][element] !== 'object') {
+                  div2.innerText = `${element} - ${value[item][key][element]}`
+                }
+                div1.appendChild(div2)
+              }
+
+            }
+            div.appendChild(div1)
+
+          }
 
         }
 
