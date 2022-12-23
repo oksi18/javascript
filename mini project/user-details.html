@@ -71,7 +71,7 @@ div.appendChild(div1)
         let divp1 = document.createElement('div')
         divp1.innerText = `${post.title}`
         let a = document.createElement('a')
-        a.href = `post-details.html`
+        a.href = `post-details.html?id=${post.id}`
         let button1 = document.createElement('button')
         button1.innerText = 'more info'
         a.appendChild(button1)
