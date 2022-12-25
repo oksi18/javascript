@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let url = new URL(location.href)
+  let id = url.searchParams.get('id')
+
+
+
+  fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    .then(value => value.json())
+    .then(value => {
+      for (const item in value) {
+        let div = document.createElement('div')
+
+        if (typeof value[item] !== 'object') {
+          div.innerText = `${item} ${value[item]} `
+        }else {
+          div.innerText = `${item} : `
+
+          for (const key in value[item]) {
+            let div1 = document.createElement('div')
+            if (typeof value[item][key] !== 'object' ) {
+              div1.innerText = `${key} - ${value[item][key]}`
+            }else {
+              div1.innerText = `${key} : `
+
+
+              for (const element in value[item][key]) {
+                let div2 = document.createElement('div')
+                if (typeof value[item][key][element] !== 'object') {
+                  div2.innerText = `${element} - ${value[item][key][element]}`
+
+                }
+                div1.appendChild(div2)
+              }
+
+            }
+            div.appendChild(div1)
+
+          }
+
+        }
+
+        document.body.appendChild(div)
+      }
+
+      let divPost = document.createElement('div')
+      divPost.classList.add('post')
+      document.body.appendChild(divPost)
+      let button = document.createElement('button')
+      button.innerText = 'post of current user'
+      divPost.appendChild(button)
+      document.body.appendChild(divPost)
+
+      button.onclick = () => {
+        let postsurl = new URL(location.href)
+        let id = postsurl.searchParams.get('id')
+        fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
+          .then(value => value.json())
+          .then(value => {
+              let divpost = document.createElement('div')
+              divpost.classList.add('post')
+              divPost.appendChild(divpost)
+
+              for (const post of value) {
+                let divp1 = document.createElement('div')
+                divp1.innerText = `${post.title}`
+                let a = document.createElement('a')
+                a.href = `post-details.html?postId=${post.id}&userId=${id}`
+                let button1 = document.createElement('button')
+                button1.innerText = 'more info'
+                a.appendChild(button1)
+                divp1.appendChild(a)
+                divPost.appendChild(divp1)
+              }
+            }
+
+          )}
+
+    })
+
+</script>
+</body>
+</html>
