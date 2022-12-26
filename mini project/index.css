@@ -1,0 +1,58 @@
+.wrapper {
+  display: grid;
+  font-family: 'Roboto Condensed', Рўahoma, sans-serif;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 150px);
+  gap: 20px;
+  padding: 10px;
+}
+
+.boxofuser {
+  padding: 20px;
+  background: linear-gradient(116.16deg, #146DF6 6.94%, #1256BF 113.61%);
+  border-radius: 15px;
+  box-shadow: rgba(46, 78, 240, 0.4) 0 5px,
+  rgba(46, 85, 240, 0.3) 0 10px,
+  rgba(46, 91, 240, 0.2) 0 15px,
+  rgba(46, 114, 240, 0.1) 0 20px,
+  rgba(240, 46, 170, 0.05) 0 25px;
+}
+
+h2 {
+  display: flex;
+  margin: 0;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: start;
+  color: white;
+}
+
+.index {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background: white;
+  color: #146DF6;
+  margin-right: 9px;
+}
+
+.info-btn {
+  text-decoration: none;
+  position: relative;
+  font-size: 14px;
+  color: #FFF;
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(116.16deg, #408bc8 6.94%, #337AB7 113.61%);;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+
+}
+
+.info-btn:hover {
+  background: #77afe3;
+  transition: background-color 400ms;
+}
