@@ -71,19 +71,14 @@
 
 
 
-      let postWrapper = document.createElement('div')
-      postWrapper.classList.add('post-wrapper')
-
       let divPost = document.createElement('div')
-      divPost.classList.add('post')
-
+      divPost.classList.add('wrapper')
 
       let button = document.createElement('button')
-      button.classList.add('post-button')
       button.innerText = 'post of current user'
-
-
-
+      button.classList.add('post-button')
+      divPost.appendChild(button)
+      document.body.appendChild(divPost)
 
       button.onclick = () => {
         let postsurl = new URL(location.href)
@@ -91,35 +86,28 @@
         fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
           .then(value => value.json())
           .then(value => {
-              let divpost = document.createElement('div')
-              divpost.classList.add('post')
-              divPost.appendChild(divpost)
+            let divpost = document.createElement('div')
+            divpost.classList.add('post')
+            divPost.appendChild(divpost)
 
-              for (const post of value) {
-                let divp1 = document.createElement('div')
-                divp1.innerText = `${post.title}`
-                divp1.classList.add('post-block')
-                let a = document.createElement('a')
-                a.href = `post-details.html?postId=${post.id}&userId=${id}`
-                let button1 = document.createElement('button')
-                button1.classList.add('more-info-btn')
-                button1.innerText = 'more info'
-                a.appendChild(button1)
-                divp1.appendChild(a)
-                divPost.appendChild(divp1)
-              }
-            })
-        postWrapper.appendChild(button)
-        postWrapper.appendChild(divPost)
-        document.body.appendChild(postWrapper)
+            for (const post of value) {
+              let divp1 = document.createElement('div')
+              divp1.classList.add('post-block')
+              divp1.innerText = `${post.title}`
+              let a = document.createElement('a')
+              a.href = `post-details.html?postId=${post.id}&userId=${id}`
+              let button1 = document.createElement('button')
+              button1.classList.add('more-info-btn')
+              button1.innerText = 'more info'
+              a.appendChild(button1)
+              divp1.appendChild(a)
+              divPost.appendChild(divp1)
+            }
+          })
+        }
 
 
-
-          }
-
-
-
-    })
+      })
 
 
 </script>

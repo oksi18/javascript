@@ -14,6 +14,11 @@
   width: 100%;
   bottom: 0;
   margin-top: 20px;
+  box-shadow: rgba(46, 78, 240, 0.4) 0 5px,
+  rgba(46, 85, 240, 0.3) 0 10px,
+  rgba(46, 91, 240, 0.2) 0 15px,
+  rgba(46, 114, 240, 0.1) 0 20px,
+  rgba(240, 46, 170, 0.05) 0 25px;
 
 }
 .a {
@@ -35,6 +40,11 @@
   border-radius: 5px;
   bottom: 0;
   margin-top: 20px;
+  box-shadow: rgba(46, 78, 240, 0.4) 0 5px,
+  rgba(46, 85, 240, 0.3) 0 10px,
+  rgba(46, 91, 240, 0.2) 0 15px,
+  rgba(46, 114, 240, 0.1) 0 20px,
+  rgba(240, 46, 170, 0.05) 0 25px;
 }
 
 .box {
@@ -48,6 +58,12 @@
   gap: 10px;
   background: linear-gradient(116.16deg, #146DF6 6.94%, #1256BF 113.61%);
   border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: rgba(46, 78, 240, 0.4) 0 5px,
+  rgba(46, 85, 240, 0.3) 0 10px,
+  rgba(46, 91, 240, 0.2) 0 15px,
+  rgba(46, 114, 240, 0.1) 0 20px,
+  rgba(240, 46, 170, 0.05) 0 25px;
 }
 
 .divider {
@@ -94,4 +110,15 @@
   rgba(46, 91, 240, 0.2) 0 15px,
   rgba(46, 114, 240, 0.1) 0 20px,
   rgba(240, 46, 170, 0.05) 0 25px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.smth {
+  color: white;
+  text-transform: uppercase;
+}
+.company {
+  color: white;
+  text-transform: uppercase;
 }
